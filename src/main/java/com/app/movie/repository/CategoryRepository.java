@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupo10.app.rents.repository;
+package com.app.movie.repository;
 
-import com.grupo10.app.rents.entities.Client;
-import com.grupo10.app.rents.interfaces.IClientRepository;
+import com.app.movie.entities.Category;
+import com.app.movie.interfaces.ICategoryRepository;
 
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,30 +17,30 @@ import org.springframework.stereotype.Repository;
  * @author Andres
  */
 @Repository
-public class ClientRepository {
+public class CategoryRepository {
     
     @Autowired
-    IClientRepository repository;
+    ICategoryRepository repository;
     
-    public Iterable<Client> getAll(){
+    public Iterable<Category> getAll(){
         return repository.findAll();
     }
     
-    public Optional<Client> findById(String id){
-        Optional<Client> response= repository.findById(id);
+    public Optional<Category> findById(Integer id){
+        Optional<Category> response= repository.findById(id);
         return response;
     }
     
-    public Boolean existsById(String id){
+    public Boolean existsById(Integer id){
         return repository.existsById(id);
     }
     
-    public void deleteById(String id){
+    public void deleteById(Integer id){
         repository.deleteById(id);
     }
     
-    public Client save(Client client){
-        return repository.save(client);
+    public Category save(Category category){
+        return repository.save(category);
     }
     
 }

@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupo10.app.rents.controller;
-
-import com.grupo10.app.rents.entities.Category;
-import com.grupo10.app.rents.interfaces.ICategoryRepository;
-import com.grupo10.app.rents.service.CategoryService;
+package com.app.movie.controller;
+import com.app.movie.entities.Category;
+import com.app.movie.service.CategoryService;
+import com.app.movie.dto.ResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,14 +31,14 @@ public class CategoryController {
     @Autowired
     CategoryService service;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public Iterable<Category> get() {
         Iterable<Category> response = service.get();
 
         return response;
     }
 
-    @PostMapping("/save")
+    @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public Category create(@RequestBody Category request) {
         return service.create(request);
@@ -53,7 +52,7 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Integer id) {
+    public void delete(@PathVariable("id") String id) {
         service.delete(id);
     }
 

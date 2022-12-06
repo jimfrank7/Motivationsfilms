@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupo10.app.rents.controller;
+package com.app.movie.controller;
 
-import com.grupo10.app.rents.entities.Client;
-import com.grupo10.app.rents.service.ClientService;
+import com.app.movie.entities.Client;
+import com.app.movie.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,25 +24,25 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Andres
  */
 @RestController
-@RequestMapping("/api/Client")
+@RequestMapping("/api/client")
 @CrossOrigin(origins = "*")
 public class ClientController {
 
     @Autowired
     ClientService service;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public Iterable<Client> get() {
         return service.get();
     }
 
-    @PostMapping("/save")
+    @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public Client create(@RequestBody Client request) {
         return service.create(request);
     }
 
-    @PutMapping("/update")
+    @PutMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public Client update(@RequestBody Client request) {
         return service.update(request);

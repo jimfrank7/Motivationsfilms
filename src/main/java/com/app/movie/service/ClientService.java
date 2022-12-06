@@ -2,15 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.grupo10.app.rents.service;
+package com.app.movie.service;
 
-import com.grupo10.app.rents.entities.Client;
-
-import com.grupo10.app.rents.repository.ClientRepository;
-import java.util.Optional;
-
+import com.app.movie.entities.Client;
+import com.app.movie.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 /**
  *
